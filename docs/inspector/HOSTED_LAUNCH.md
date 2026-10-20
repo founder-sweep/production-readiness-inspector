@@ -131,6 +131,17 @@ call to action links to the actual $19/100 workspace checkout. GitHub/PyPI/regis
 acceptance must be verified independently; do not invent a published package
 or claim an independent buyer from internal qualification.
 
+The public source repository is
+https://github.com/founder-sweep/production-readiness-inspector and the verified
+v0.3.0 release is
+https://github.com/founder-sweep/production-readiness-inspector/releases/tag/v0.3.0.
+The release includes the same wheel and source archive served by the product.
+An isolated environment installed the allowlisted standalone source package
+with its documented optional dependencies and passed all 74 owned tests.
+The published repository contains only Inspector-owned files; no other product
+source, private configuration, runtime database or credential is included.
+No PyPI listing, MCP registry acceptance, independent review or buyer is claimed.
+
 No prospect emailing, direct messaging or paid promotion is authorized by a
 general launch request. Prepared interview/outreach copy remains unsent until
 specific recipient/content authorization. Organic public distribution and the

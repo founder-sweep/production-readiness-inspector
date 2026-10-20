@@ -11,6 +11,6 @@
   "required_before_submission": ["Verify distribution name ownership", "Select and verify registry namespace", "Publish reviewed source/artifact with authorization", "Use current official registry schema and publisher validation", "Verify installation from the actual published artifact"],
   "remote_url": null,
   "registry_namespace": null,
-  "source_url": null,
+  "source_url": "https://github.com/founder-sweep/production-readiness-inspector",
   "accepted_listing": false
 }
