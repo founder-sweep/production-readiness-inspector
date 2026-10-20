@@ -1,0 +1,8 @@
+.venv/
+.mcp-products/
+__pycache__/
+*.pyc
+*.egg-info/
+*.env
+build/
+dist/

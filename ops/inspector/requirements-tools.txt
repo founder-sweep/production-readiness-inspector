@@ -1,0 +1,6 @@
+# Product-owned tools environment only; never install into the shared .venv.
+build==1.6.1
+setuptools==80.9.0
+wheel==0.45.1
+PyYAML==6.0.3
+jsonschema==4.26.0

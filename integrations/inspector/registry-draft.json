@@ -1,0 +1,16 @@
+{
+  "status": "review_worksheet_not_publishable_registry_metadata",
+  "display_name": "Production Readiness Inspector",
+  "description": "Local Python/FastAPI, Docker and GitHub Actions evidence with bounded static analysis, coverage, JSON/text/SARIF and instance baselines.",
+  "candidate_package": {"ecosystem": "pypi", "name": "contentsweep-prodcheck", "version": "0.3.0", "publication": "not_published_to_pypi"},
+  "transport": "stdio",
+  "entrypoint": "prodcheck-mcp",
+  "arguments": ["--root", "REPLACE_WITH_APPROVED_LOCAL_ROOT"],
+  "tool": "inspect_repository",
+  "license": "Apache-2.0",
+  "required_before_submission": ["Verify distribution name ownership", "Select and verify registry namespace", "Publish reviewed source/artifact with authorization", "Use current official registry schema and publisher validation", "Verify installation from the actual published artifact"],
+  "remote_url": null,
+  "registry_namespace": null,
+  "source_url": null,
+  "accepted_listing": false
+}

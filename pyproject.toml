@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools==80.9.0", "wheel==0.45.1"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "contentsweep-prodcheck"
+version = "0.3.0"
+description = "Evidence-backed static operability checks for local Python/FastAPI, Docker and GitHub Actions"
+readme = "README.md"
+requires-python = ">=3.12"
+license = "Apache-2.0"
+license-files = ["LICENSE"]
+dependencies = []
+classifiers = ["Development Status :: 4 - Beta", "Operating System :: POSIX :: Linux", "Programming Language :: Python :: 3"]
+
+[project.optional-dependencies]
+mcp = ["mcp==2.3.0"]
+hosted = ["fastapi==0.143.0", "uvicorn==0.54.0", "stripe==16.0.0"]
+
+[project.scripts]
+prodcheck = "mcp_products.inspector.cli:main"
+prodcheck-api = "mcp_products.inspector.api:main"
+prodcheck-mcp = "mcp_products.inspector.mcp:main"
+prodcheck-cloud = "mcp_products.inspector.cloud:main"
+prodcheck-hosted = "mcp_products.inspector.hosted:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["mcp_products.inspector*"]
+namespaces = true
