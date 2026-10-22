@@ -11,6 +11,11 @@ import subprocess
 from pathlib import Path
 
 REPOSITORY = "founder-sweep/production-readiness-inspector"
+PRIVATE_CAMPAIGN_HELPERS = {
+    "scripts/inspector/prepare_campaign.py",
+    "scripts/inspector/research_agencies.py",
+    "scripts/inspector/review_campaign.py",
+}
 PUBLIC_README = """# Production Readiness Inspector
 
 Give clients a clear record of what changed before their next Python release.
@@ -133,7 +138,9 @@ def main():
     for base in ["src/mcp_products/inspector", "examples/inspector", "integrations/inspector", "benchmarks/inspector", "scripts/inspector", "ops/inspector"]:
         for path in (root / base).rglob("*"):
             if path.is_file() and not path.is_symlink() and "__pycache__" not in path.parts and path.suffix != ".pyc":
-                selected[path.relative_to(root).as_posix()] = path
+                relative = path.relative_to(root).as_posix()
+                if relative not in PRIVATE_CAMPAIGN_HELPERS:
+                    selected[relative] = path
     for path in (root / "tests").glob("test_inspector*.py"):
         selected[path.relative_to(root).as_posix()] = path
     for name in ["RULES.md", "README.md", "HOSTED_LAUNCH.md"]:
@@ -169,11 +176,14 @@ def main():
         raise ValueError("publication remote mismatch")
     if command(["git", "-C", str(checkout), "status", "--porcelain"]):
         raise ValueError("publication checkout has pending changes; preserve and inspect")
+    # Campaign operations and curated research stay in the owner's checkout.
+    command(["git", "-C", str(checkout), "rm", "--ignore-unmatch", "--", *sorted(PRIVATE_CAMPAIGN_HELPERS)])
     for name in files:
         target = checkout / name
         target.parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(payload / name, target)
     command(["git", "-C", str(checkout), "add", "--", *files])
+    command(["git", "-C", str(checkout), "diff", "--cached", "--check"])
     changed = subprocess.run(["git", "-C", str(checkout), "diff", "--cached", "--quiet"], capture_output=True, check=False)
     if changed.returncode == 1:
         command(["git", "-C", str(checkout), "-c", "user.name=Content Sweep release", "-c", "user.email=release@contentsweep.ai", "commit", "-m", "Publish Inspector agency handoff quickstart and comparison guides"])
