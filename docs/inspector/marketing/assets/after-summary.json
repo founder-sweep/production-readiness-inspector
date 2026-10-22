@@ -1,0 +1,21 @@
+{
+  "coverage": {
+    "compose": "not_supported",
+    "dependencies": "not_supported",
+    "docker": "analyzed_subset",
+    "fastapi": "syntax_only",
+    "github_actions": "analyzed_subset",
+    "kubernetes": "not_supported",
+    "python": "analyzed",
+    "repository": "analyzed",
+    "runtime_behavior": "not_analyzed",
+    "secret_values": "not_analyzed"
+  },
+  "findings": [],
+  "input_fingerprint": "sha256:a35225c99489e4381b67b06822245c901913feaacf789e15bf31c011c32653ea",
+  "product": "production-readiness-inspector",
+  "profile": "python-fastapi-container-v1",
+  "ruleset_version": "2026.10.18.1",
+  "schema_version": "inspector-summary-v1",
+  "scope_fingerprint": "sha256:ad13b6b0b95e5489e52e6444264f9d26d087059b10169917838f1fd5a0bbf330"
+}

@@ -1,0 +1,92 @@
+{
+  "coverage": {
+    "compose": "not_supported",
+    "dependencies": "not_supported",
+    "docker": "analyzed_subset",
+    "fastapi": "syntax_only",
+    "github_actions": "analyzed_subset",
+    "kubernetes": "not_supported",
+    "python": "analyzed",
+    "repository": "analyzed",
+    "runtime_behavior": "not_analyzed",
+    "secret_values": "not_analyzed"
+  },
+  "findings": [
+    {
+      "instance_id": "sha256:e12cdf6579bbf5bca2c60a68db2d4066f28794aab4844ac71ad273e6b5e37c5a",
+      "line": 3,
+      "path": ".github/workflows/ci.yml",
+      "rule_id": "PR-CI-002",
+      "rule_version": "2"
+    },
+    {
+      "instance_id": "sha256:6a5b469e54b36b4b8bd824dacc37f7715a9bca24f89f2d4b78ba02b6488519eb",
+      "line": 8,
+      "path": ".github/workflows/ci.yml",
+      "rule_id": "PR-CI-001",
+      "rule_version": "2"
+    },
+    {
+      "instance_id": "sha256:f26bf85d99c295b40d94b9e186af167a468a58b1e1725028e8a2b91b3c07ae0a",
+      "line": 11,
+      "path": ".github/workflows/ci.yml",
+      "rule_id": "PR-CI-001",
+      "rule_version": "2"
+    },
+    {
+      "instance_id": "sha256:bc14701a2eb132640c5a29faf80431f16c52791e046b375148cd5427ab8e10e4",
+      "line": 1,
+      "path": "Dockerfile",
+      "rule_id": "PR-DOCKER-001",
+      "rule_version": "2"
+    },
+    {
+      "instance_id": "sha256:2454f39895ecc09f88990df3ffd231ea04c7fea8961feb261a91ca6c0c9d0573",
+      "line": 2,
+      "path": "Dockerfile",
+      "rule_id": "PR-DOCKER-002",
+      "rule_version": "2"
+    },
+    {
+      "instance_id": "sha256:03954b90bdddecc5ee3ca57112f053ff0a8ba501f8470055f0ba5ce9c026e7cb",
+      "line": 4,
+      "path": "Dockerfile",
+      "rule_id": "PR-DOCKER-003",
+      "rule_version": "1"
+    },
+    {
+      "instance_id": "sha256:4a228458dbbc8b2fb2babcebdb61f1ac6075fa298eefc8b1bef5f0cd6f009a54",
+      "line": 4,
+      "path": "Dockerfile",
+      "rule_id": "PR-DOCKER-004",
+      "rule_version": "1"
+    },
+    {
+      "instance_id": "sha256:7ac11005aa9514a82a574e0dee42b7c53772633abd68193ddb57331f52f44de9",
+      "line": 5,
+      "path": "app.py",
+      "rule_id": "PR-PY-001",
+      "rule_version": "2"
+    },
+    {
+      "instance_id": "sha256:304385688a6043c3f648958f7c8ebdb9a52e88f7fe3a1e467dac9802ae06a77e",
+      "line": 14,
+      "path": "app.py",
+      "rule_id": "PR-PY-001",
+      "rule_version": "2"
+    },
+    {
+      "instance_id": "sha256:a87da1e1b39f6f7d206c2977a92b527661278dcfd8f014e11d48a9d3eedef1e0",
+      "line": 5,
+      "path": "app.py",
+      "rule_id": "PR-FASTAPI-001",
+      "rule_version": "2"
+    }
+  ],
+  "input_fingerprint": "sha256:be3ace0673d5fed1c0c267e62431e7bb1984ce4c6704f2b551b865e6139277b6",
+  "product": "production-readiness-inspector",
+  "profile": "python-fastapi-container-v1",
+  "ruleset_version": "2026.10.18.1",
+  "schema_version": "inspector-summary-v1",
+  "scope_fingerprint": "sha256:ad13b6b0b95e5489e52e6444264f9d26d087059b10169917838f1fd5a0bbf330"
+}

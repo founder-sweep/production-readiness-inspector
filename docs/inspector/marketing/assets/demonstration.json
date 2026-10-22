@@ -1,0 +1,22 @@
+{
+  "synthetic": true,
+  "product_version": "0.3.0",
+  "wheel_sha256": "9761f945a9b6d618ea7f16a381036992803522c038501b303a2cbe334da36b71",
+  "ruleset": "2026.10.18.1",
+  "real_https_flow": true,
+  "before": {
+    "findings": 10,
+    "new": 10,
+    "unchanged": 0,
+    "resolved": 0
+  },
+  "after": {
+    "findings": 0,
+    "new": 0,
+    "unchanged": 0,
+    "resolved": 10
+  },
+  "raw_source_uploaded": false,
+  "paid_purchase_created": false,
+  "internal_workspace_excluded_from_customer_metrics": true
+}

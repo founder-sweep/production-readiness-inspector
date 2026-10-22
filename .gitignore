@@ -1,4 +1,6 @@
 .venv/
+.inspector-venv/
+.demo-reports/
 .mcp-products/
 __pycache__/
 *.pyc

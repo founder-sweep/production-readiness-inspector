@@ -1,0 +1,17 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Inspector release report</title><h1>Inspector release report</h1><p>Project: synthetic-agency-demo</p>
+<p>Caller-submitted static evidence. Source and runtime behavior were not independently verified.</p>
+<p>Ruleset: 2026.10.18.1 · New: 10 · Unchanged: 0 · Resolved: 0</p>
+<p>Input: sha256:be3ace0673d5fed1c0c267e62431e7bb1984ce4c6704f2b551b865e6139277b6</p><table><thead><tr><th>Rule</th><th>Severity</th><th>Finding</th><th>Location</th><th>Change</th><th>Remediation</th></tr></thead><tbody><tr><td>PR-CI-002</td><td>high</td><td>Workflow declares write-all token permissions</td><td>.github/workflows/ci.yml:3</td><td>new</td><td>Declare the minimum required workflow/job permissions.</td></tr><tr><td>PR-CI-001</td><td>high</td><td>External action is not pinned to an immutable reference</td><td>.github/workflows/ci.yml:8</td><td>new</td><td>Pin remote actions and reusable workflows to a full commit SHA; pin docker actions to a digest.</td></tr><tr><td>PR-CI-001</td><td>high</td><td>External action is not pinned to an immutable reference</td><td>.github/workflows/ci.yml:11</td><td>new</td><td>Pin remote actions and reusable workflows to a full commit SHA; pin docker actions to a digest.</td></tr><tr><td>PR-DOCKER-001</td><td>medium</td><td>External base image is mutable</td><td>Dockerfile:1</td><td>new</td><td>Consider a reviewed sha256 digest and an explicit update process; tags can change.</td></tr><tr><td>PR-DOCKER-002</td><td>medium</td><td>Final stage explicitly selects a root runtime user</td><td>Dockerfile:2</td><td>new</td><td>Select a non-root runtime user where the application permits it.</td></tr><tr><td>PR-DOCKER-003</td><td>medium</td><td>Final startup uses shell form without exec</td><td>Dockerfile:4</td><td>new</td><td>Review signal forwarding; use JSON exec form or a signal-forwarding entrypoint.</td></tr><tr><td>PR-DOCKER-004</td><td>high</td><td>Final startup enables Uvicorn reload</td><td>Dockerfile:4</td><td>new</td><td>Remove --reload from the production startup command.</td></tr><tr><td>PR-PY-001</td><td>high</td><td>Development mode is explicitly enabled</td><td>app.py:5</td><td>new</td><td>Disable literal debug/reload settings in the production configuration.</td></tr><tr><td>PR-PY-001</td><td>high</td><td>Development mode is explicitly enabled</td><td>app.py:14</td><td>new</td><td>Disable literal debug/reload settings in the production configuration.</td></tr><tr><td>PR-FASTAPI-001</td><td>medium</td><td>No direct conventional GET health route was found</td><td>app.py:5</td><td>new</td><td>Review /health, /healthz, /ready or /readyz routing and test readiness behavior in the deployed application.</td></tr></tbody></table>
+<h2>Coverage</h2><pre>{
+  &quot;compose&quot;: &quot;not_supported&quot;,
+  &quot;dependencies&quot;: &quot;not_supported&quot;,
+  &quot;docker&quot;: &quot;analyzed_subset&quot;,
+  &quot;fastapi&quot;: &quot;syntax_only&quot;,
+  &quot;github_actions&quot;: &quot;analyzed_subset&quot;,
+  &quot;kubernetes&quot;: &quot;not_supported&quot;,
+  &quot;python&quot;: &quot;analyzed&quot;,
+  &quot;repository&quot;: &quot;analyzed&quot;,
+  &quot;runtime_behavior&quot;: &quot;not_analyzed&quot;,
+  &quot;secret_values&quot;: &quot;not_analyzed&quot;
+}</pre><p>A clean static report is not deployment certification.</p></html>

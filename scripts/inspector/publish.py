@@ -13,6 +13,10 @@ from pathlib import Path
 REPOSITORY = "founder-sweep/production-readiness-inspector"
 PUBLIC_README = """# Production Readiness Inspector
 
+Give clients a clear record of what changed before their next Python release.
+**[Start with the agency quickstart](docs/inspector/marketing/AGENCY_QUICKSTART.md)**:
+published-release installation, a synthetic before/after example, and an HTML handoff.
+
 Static Python/FastAPI, Docker and GitHub Actions evidence for your next release.
 Run the local scanner free, keep source on your machine, and optionally save
 private release reports with instance-level baseline history.
@@ -134,6 +138,9 @@ def main():
         selected[path.relative_to(root).as_posix()] = path
     for name in ["RULES.md", "README.md", "HOSTED_LAUNCH.md"]:
         selected["docs/inspector/" + name] = root / "docs/inspector" / name
+    for path in (root / "docs/inspector/marketing").rglob("*"):
+        if path.is_file() and not path.is_symlink():
+            selected[path.relative_to(root).as_posix()] = path
     selected["LICENSE"] = root / "docs/inspector/LICENSE"
     selected["pyproject.toml"] = root / "ops/inspector/pyproject.toml"
     credential = re.compile(rb"(?:[sr]k_(?:test|live)_|whsec_)[A-Za-z0-9]{16,}|AKIA[0-9A-Z]{16}")
@@ -144,7 +151,7 @@ def main():
         target.parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(source, target)
     (payload / "README.md").write_text(PUBLIC_README)
-    (payload / ".gitignore").write_text(".venv/\n.mcp-products/\n__pycache__/\n*.pyc\n*.egg-info/\n*.env\nbuild/\ndist/\n")
+    (payload / ".gitignore").write_text(".venv/\n.inspector-venv/\n.demo-reports/\n.mcp-products/\n__pycache__/\n*.pyc\n*.egg-info/\n*.env\nbuild/\ndist/\n")
     files = sorted([*selected, "README.md", ".gitignore"])
     hashes = {name: hashlib.sha256((payload / name).read_bytes()).hexdigest() for name in files}
     manifest = {"repository": REPOSITORY, "files": hashes, "payload_sha256": hashlib.sha256(json.dumps(hashes, sort_keys=True).encode()).hexdigest(), "private_files": 0}
@@ -169,7 +176,7 @@ def main():
     command(["git", "-C", str(checkout), "add", "--", *files])
     changed = subprocess.run(["git", "-C", str(checkout), "diff", "--cached", "--quiet"], capture_output=True, check=False)
     if changed.returncode == 1:
-        command(["git", "-C", str(checkout), "-c", "user.name=Content Sweep release", "-c", "user.email=release@contentsweep.ai", "commit", "-m", "Publish Inspector 0.3 local scanner and hosted report integration"])
+        command(["git", "-C", str(checkout), "-c", "user.name=Content Sweep release", "-c", "user.email=release@contentsweep.ai", "commit", "-m", "Publish Inspector agency handoff quickstart and comparison guides"])
     elif changed.returncode:
         raise ValueError("staged comparison failed")
     command(["git", "-C", str(checkout), "push", "origin", "HEAD"])

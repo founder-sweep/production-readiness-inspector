@@ -1,5 +1,9 @@
 # Production Readiness Inspector
 
+Give clients a clear record of what changed before their next Python release.
+**[Start with the agency quickstart](docs/inspector/marketing/AGENCY_QUICKSTART.md)**:
+published-release installation, a synthetic before/after example, and an HTML handoff.
+
 Static Python/FastAPI, Docker and GitHub Actions evidence for your next release.
 Run the local scanner free, keep source on your machine, and optionally save
 private release reports with instance-level baseline history.
