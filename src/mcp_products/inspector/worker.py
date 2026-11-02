@@ -9,6 +9,7 @@ from .docker_rules import DockerError, inspect_docker
 from .model import BASELINE_FORMAT, PRODUCT, PROFILE, RULES, RULESET, Analysis, Limits
 from .repository import Repository
 from .result import ProductResult
+from .worker_limits import limit_memory
 from .workflow import WorkflowError, inspect_workflow
 
 
@@ -122,7 +123,7 @@ def main():
         payload = json.loads(sys.stdin.buffer.read(8_000_001))
         limits = Limits(**payload["limits"])
         import resource
-        resource.setrlimit(resource.RLIMIT_AS, (512 * 1024 * 1024, 512 * 1024 * 1024))
+        limit_memory(512 * 1024 * 1024)
         resource.setrlimit(resource.RLIMIT_CPU, (limits.max_seconds + 1, limits.max_seconds + 1))
         resource.setrlimit(resource.RLIMIT_NOFILE, (128, 128))
         result = scan(payload["root"], payload["baseline"], limits)

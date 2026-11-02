@@ -1,5 +1,13 @@
 # Production Readiness Inspector
 
+<!-- agent-current-status:start -->
+## Current status — November 1, 2026
+
+Current immutable download: Inspector 0.3.0, with current_artifacts in the public manifest. Local CLI/stdio MCP are free; optional hosted metadata reports have three trials then $19/100 reports. Local MCP needs no hosted key; hosted history uses a separate private workspace key. Existing wheel qualification is Linux; the reviewed Mac source adds a sampled memory guard. No PyPI or Registry listing is claimed.
+
+[Agent setup](https://inspector.contentsweep.ai/inspector/integrate) · [Product skill](https://inspector.contentsweep.ai/inspector/SKILL.md) · [Task-to-tool reference](https://inspector.contentsweep.ai/inspector/agent-assets/TOOL_REFERENCE.md). Skills support Codex and Claude Code and grant no upload, business-meaning approval, spending or destination-write permission. Historical test notes below retain their original scope; synthetic/internal qualification is not paid adoption.
+<!-- agent-current-status:end -->
+
 Give clients a clear record of what changed before their next Python release.
 **[Start with the agency quickstart](docs/inspector/marketing/AGENCY_QUICKSTART.md)**:
 published-release installation, a synthetic before/after example, and an HTML handoff.

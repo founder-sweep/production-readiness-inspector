@@ -69,6 +69,10 @@ def create_app(settings: HostedSettings | None = None, *, gateway=None):
 
     app = FastAPI(title="Inspector reports", docs_url=None, redoc_url=None, openapi_url=None, lifespan=lifespan)
     app.state.store, app.state.settings = store, settings
+    from .agent_docs import register as register_agent_docs
+    register_agent_docs(app, urlparse(settings.base_url).scheme + "://" + urlparse(settings.base_url).netloc)
+    from . import agent_docs
+    agent_docs.register_assets(app)
     origin = urlparse(settings.base_url).scheme + "://" + urlparse(settings.base_url).netloc
     host = urlparse(settings.base_url).netloc
 
@@ -142,6 +146,10 @@ def create_app(settings: HostedSettings | None = None, *, gateway=None):
     async def home():
         return RedirectResponse(PREFIX)
 
+    @app.get("/inspector/integrate", response_class=HTMLResponse)
+    def agent_integration():
+        return HTMLResponse(agent_docs.integration_page())
+
     @app.get(PREFIX, response_class=HTMLResponse)
     async def index():
         return landing(settings.billing_enabled, settings.mode, settings.support_email)
@@ -163,10 +171,10 @@ def create_app(settings: HostedSettings | None = None, *, gateway=None):
 
     @app.post(PREFIX + "/api/workspaces")
     async def workspace(request: Request):
-        await payload(request, set())
+        value = await payload(request, {"campaign"})
         store.rate("signup:" + ip_bucket(request), 3, 86400)
         store.rate("signup:global", 500, 86400)
-        return store.create_workspace()
+        return store.create_workspace(campaign=value.get("campaign", "unknown"))
 
     @app.get(PREFIX + "/api/balance")
     async def balance(request: Request):

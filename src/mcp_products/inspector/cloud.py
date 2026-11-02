@@ -65,6 +65,7 @@ def main(argv=None):
     parser.add_argument("--key-file", type=Path)
     parser.add_argument("--report-id")
     parser.add_argument("--idempotency-key")
+    parser.add_argument("--campaign", default="unknown", help="First-touch campaign for a new workspace only")
     args = parser.parse_args(argv)
     try:
         if args.command in {"preview", "submit"}:
@@ -76,7 +77,7 @@ def main(argv=None):
         elif args.command == "workspace":
             if args.key_file is None or args.key_file.exists():
                 raise CommerceError("new_key_file_path_required")
-            result = request(args.server, "workspaces", method="POST", body={})
+            result = request(args.server, "workspaces", method="POST", body={"campaign": args.campaign})
             args.key_file.parent.mkdir(parents=True, exist_ok=True, mode=0o700)
             fd = os.open(args.key_file, os.O_WRONLY | os.O_CREAT | os.O_EXCL, 0o600)
             with os.fdopen(fd, "w") as handle:

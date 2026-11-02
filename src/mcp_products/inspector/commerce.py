@@ -112,6 +112,7 @@ class ReportStore:
                 CREATE TABLE IF NOT EXISTS reports (id TEXT PRIMARY KEY,workspace TEXT NOT NULL,project TEXT NOT NULL,idempotency TEXT NOT NULL,payload_hash TEXT NOT NULL,summary TEXT,comparison TEXT,created REAL NOT NULL,UNIQUE(workspace,idempotency));
                 CREATE INDEX IF NOT EXISTS report_history ON reports(workspace,project,created);
                 CREATE TABLE IF NOT EXISTS rate_limits (bucket TEXT PRIMARY KEY,count INTEGER NOT NULL,expires REAL NOT NULL);
+                CREATE TABLE IF NOT EXISTS acquisition (workspace TEXT PRIMARY KEY,campaign TEXT NOT NULL,created REAL NOT NULL);
             """)
             if "classification" not in {row[1] for row in db.execute("PRAGMA table_info(purchases)")}:
                 db.execute("ALTER TABLE purchases ADD COLUMN classification TEXT NOT NULL DEFAULT 'customer'")
@@ -155,13 +156,16 @@ class ReportStore:
             if db.execute("SELECT count FROM rate_limits WHERE bucket=?", (bucket,)).fetchone()[0] > count:
                 raise CommerceError("rate_limit", 429)
 
-    def create_workspace(self, *, classification: str = "customer"):
+    def create_workspace(self, *, classification: str = "customer", campaign: str = "unknown"):
         if classification not in {"customer", "internal"}:
             raise CommerceError("invalid_classification")
+        if not isinstance(campaign, str) or not re.fullmatch(r"[a-zA-Z0-9_.-]{1,64}", campaign):
+            campaign = "unknown"
         self.capacity()
         workspace, token = "iw_" + secrets.token_hex(16), "ipk_" + secrets.token_urlsafe(32)
         with self.transaction() as db:
             db.execute("INSERT INTO workspaces VALUES (?,?,?,?)", (workspace, opaque_hash(token), time.time(), classification))
+            db.execute("INSERT INTO acquisition VALUES (?,?,?)", (workspace, campaign, time.time()))
             db.execute("INSERT INTO ledger(workspace,delta,reason,reference,created) VALUES (?,?,?,?,?)", (workspace, TRIAL, "trial", "trial:" + workspace, time.time()))
         return {"workspace_id": workspace, "api_key": token, "trial_reports": TRIAL, "mode": self.mode}
 
