@@ -22,10 +22,11 @@ Exit 2 means findings under the selected policy; 5 means failed/incomplete evalu
 
 ## Optional paid history
 
+Create a workspace at https://inspector.contentsweep.ai/inspector?campaign=agent-skill#workspace and save its key privately as PRIVATE_NEW_KEY_FILE before using the commands below. The published 0.3.0 wheel supports submit/history; campaign attribution is captured by browser workspace creation.
+
 Three hosted reports are free; $19 buys 100 reports. No subscription or automatic top-up. One new complete summary costs one report; exact retries reuse the original receipt. Raw source and evidence prose stay local. Preview relative paths, fingerprints and supported summary fields before submission.
 
 ```bash
-.inspector-venv/bin/python -m mcp_products.inspector.cloud workspace --key-file PRIVATE_NEW_KEY_FILE --campaign agent-skill
 .inspector-venv/bin/python -m mcp_products.inspector.cloud submit report.json --project client-api --key-file PRIVATE_NEW_KEY_FILE
 .inspector-venv/bin/python -m mcp_products.inspector.cloud history --key-file PRIVATE_NEW_KEY_FILE
 ```
