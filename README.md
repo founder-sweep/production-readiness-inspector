@@ -106,3 +106,22 @@ Synthetic correctness parity with a maintained script is not independent
 accuracy, customer ROI or paid adoption evidence.
 
 Apache-2.0. Content Sweep LLC. Billing/support: founder@contentsweep.ai.
+
+<!-- contentsweep-skill-distribution:begin -->
+## Install the agent skill
+
+Install this skill in the intended project, then choose the coding agents you use:
+
+```sh
+npx skills add founder-sweep/production-readiness-inspector --skill inspect-release
+```
+
+For Claude Code, add the ContentSweep marketplace and install this product:
+
+```sh
+claude plugin marketplace add founder-sweep/contentsweep-supplier-feed-examples
+claude plugin install contentsweep-inspector@contentsweep
+```
+
+The marketplace contains Supplier Feeds, Data Quality Gate, Inspector and Schema Mapper. Each plugin loads its existing product skill and companion references. Installation grants no upload, spending, business-rule approval or destination-write permission. MCP connections and runtime dependencies are configured separately using the bundled [agent setup](skills/contentsweep-inspector/AGENT_SETUP.md). Review the supported scope, privacy, free/local options and current hosted pricing before use.
+<!-- contentsweep-skill-distribution:end -->

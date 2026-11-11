@@ -1,0 +1,11 @@
+{
+  "name": "contentsweep-inspector",
+  "version": "1.0.0",
+  "description": "Run local Python/FastAPI release checks and prepare a private before/after handoff.",
+  "author": {
+    "name": "Content Sweep LLC",
+    "email": "founder@contentsweep.ai"
+  },
+  "homepage": "https://inspector.contentsweep.ai/",
+  "repository": "https://github.com/founder-sweep/production-readiness-inspector"
+}
