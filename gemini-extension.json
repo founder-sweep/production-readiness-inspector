@@ -1,0 +1,28 @@
+{
+  "name": "contentsweep-inspector",
+  "version": "1.0.0",
+  "description": "Run local Python/FastAPI release checks and prepare a private before/after handoff.",
+  "mcpServers": {
+    "contentsweep-inspector": {
+      "command": "${CONTENTSWEEP_INSPECTOR_MCP_COMMAND}",
+      "args": [
+        "--root",
+        "${CONTENTSWEEP_INSPECTOR_ROOT}"
+      ]
+    }
+  },
+  "settings": [
+    {
+      "name": "Inspector MCP executable",
+      "description": "Absolute installed MCP executable path for Inspector",
+      "envVar": "CONTENTSWEEP_INSPECTOR_MCP_COMMAND",
+      "sensitive": false
+    },
+    {
+      "name": "Authorized inspection root",
+      "description": "Absolute directory explicitly authorized for local inspection",
+      "envVar": "CONTENTSWEEP_INSPECTOR_ROOT",
+      "sensitive": false
+    }
+  ]
+}

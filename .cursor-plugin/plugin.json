@@ -1,0 +1,38 @@
+{
+  "name": "contentsweep-inspector",
+  "version": "1.0.0",
+  "description": "Run local Python/FastAPI release checks and prepare a private before/after handoff.",
+  "author": {
+    "name": "Content Sweep LLC",
+    "email": "founder@contentsweep.ai"
+  },
+  "homepage": "https://inspector.contentsweep.ai/",
+  "repository": "https://github.com/founder-sweep/production-readiness-inspector",
+  "license": "Apache-2.0",
+  "logo": "assets/contentsweep.svg",
+  "skills": [
+    "skills/contentsweep-inspector"
+  ],
+  "keywords": [
+    "mcp",
+    "inspect-release",
+    "contentsweep"
+  ],
+  "variables": {
+    "type": "object",
+    "properties": {
+      "CONTENTSWEEP_INSPECTOR_MCP_COMMAND": {
+        "type": "string",
+        "title": "Absolute installed MCP executable path for Inspector"
+      },
+      "CONTENTSWEEP_INSPECTOR_ROOT": {
+        "type": "string",
+        "title": "Authorized inspection root"
+      }
+    },
+    "required": [
+      "CONTENTSWEEP_INSPECTOR_MCP_COMMAND",
+      "CONTENTSWEEP_INSPECTOR_ROOT"
+    ]
+  }
+}

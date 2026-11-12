@@ -1,0 +1,14 @@
+{
+  "mcp": {
+    "contentsweep-inspector": {
+      "type": "local",
+      "command": [
+        "{env:CONTENTSWEEP_INSPECTOR_MCP_COMMAND}",
+        "--root",
+        "{env:CONTENTSWEEP_INSPECTOR_ROOT}"
+      ],
+      "enabled": true,
+      "timeout": 120000
+    }
+  }
+}

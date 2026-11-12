@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "contentsweep-inspector": {
+      "command": "${CONTENTSWEEP_INSPECTOR_MCP_COMMAND}",
+      "args": [
+        "--root",
+        "${CONTENTSWEEP_INSPECTOR_ROOT}"
+      ]
+    }
+  }
+}

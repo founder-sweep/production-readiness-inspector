@@ -123,5 +123,13 @@ claude plugin marketplace add founder-sweep/contentsweep-supplier-feed-examples
 claude plugin install contentsweep-inspector@contentsweep
 ```
 
-The marketplace contains Supplier Feeds, Data Quality Gate, Inspector and Schema Mapper. Each plugin loads its existing product skill and companion references. Installation grants no upload, spending, business-rule approval or destination-write permission. MCP connections and runtime dependencies are configured separately using the bundled [agent setup](skills/contentsweep-inspector/AGENT_SETUP.md). Review the supported scope, privacy, free/local options and current hosted pricing before use.
+The marketplace contains Supplier Feeds, Data Quality Gate, Inspector, Schema Mapper, DAG Doctor and Deployment Fixer. Each plugin loads its existing product skill and companion references. Installation grants no upload, spending, business-rule approval or destination-write permission. MCP connections and runtime dependencies are configured separately using the bundled [agent setup](skills/contentsweep-inspector/AGENT_SETUP.md). Review the supported scope, privacy, free/local options and current hosted pricing before use.
 <!-- contentsweep-skill-distribution:end -->
+
+<!-- contentsweep-client-distribution:begin -->
+## Gemini, Kilo, Cline and Cursor
+
+Run local Python/FastAPI release checks and prepare a private before/after handoff.
+
+Follow [client installation and recovery](CLIENTS.md). Native configuration examples, required settings, the existing skill and supported scope are included. Catalog submission and acceptance are recorded separately.
+<!-- contentsweep-client-distribution:end -->

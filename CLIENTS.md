@@ -1,0 +1,43 @@
+# Inspector: coding-agent setup
+
+Run local Python/FastAPI release checks and prepare a private before/after handoff.
+
+## Runtime and credentials
+
+Follow the existing runtime setup in the README. Use a dedicated Python 3.12+ environment. Set `CONTENTSWEEP_INSPECTOR_MCP_COMMAND` to the absolute path of its installed `prodcheck-mcp` executable. Launch from a trusted workspace; the working directory is not a filesystem sandbox. Do not install or execute dependencies from the project being assessed. Set `CONTENTSWEEP_INSPECTOR_ROOT` to the explicitly authorized inspection root. The server requires this root and accepts only contained relative inspection paths.
+
+## Gemini CLI
+
+Install the extension from this repository:
+
+```sh
+gemini extensions install https://github.com/founder-sweep/production-readiness-inspector
+```
+
+Provide the requested setting in the native installation prompt. API keys are sensitive settings. The extension supplies the existing skill and default MCP connection; it does not approve tool calls or spending. For a project-managed connection, merge the Gemini example from `client-configs/gemini.json` into the intended profile.
+
+## Kilo
+
+Use the published marketplace entry when available, or merge `client-configs/kilo.json` into the intended project configuration and install the existing skill. The catalog entry includes a companion skill; companion installation requires a client version supporting that feature. Review prerequisites before installation.
+
+## Cline
+
+Ask Cline to follow this README and `llms-install.md`. Merge the entry in `client-configs/cline.json` into its MCP settings and provide the named setting privately. The hosted example selects `streamableHttp` explicitly. Keep tool approvals enabled.
+
+## Cursor
+
+Install the Cursor plugin from the marketplace or load this repository as a local plugin for development. Configure its declared variable in the plugin settings. The root `mcp.json` is the native plugin connection definition; the copy in `client-configs/cursor.json` is for a manually managed connection. For the manual copy, use Cursor's documented environment interpolation in place of the plugin variable. Preserve unrelated entries.
+
+## Skill and first task
+
+Read [inspect-release](skills/contentsweep-inspector/SKILL.md) and its relative references. Use the repository-owned synthetic example first and inspect the substantive result, not just execution success. Fixture approval never authorizes customer uploads, business meanings, purchases or downstream writes.
+
+## Price and supported scope
+
+Local CLI and MCP are free. Optional hosted metadata reports have three trials, then $19/100 reports.
+
+Static local Python/FastAPI, Docker and GitHub Actions inspection. No target-code execution or source upload. Python 3.12+; reviewed source installation on macOS, qualified 0.3.0 wheel on Linux.
+
+## Recovery and removal
+
+Keep private keys out of source control and command history. Remove only this product's plugin/server/owned companion skill. Keep unrelated tools and settings. Client installation, marketplace acceptance, recommendations and paid adoption are separate outcomes.
