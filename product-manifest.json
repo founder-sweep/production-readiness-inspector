@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "title": "Inspector",
+  "repository": "production-readiness-inspector",
+  "plugin": "contentsweep-inspector",
+  "skill": "inspect-release",
+  "skill_path": "skills/contentsweep-inspector/SKILL.md",
+  "description": "Run local Python/FastAPI release checks and prepare a private before/after handoff.",
+  "homepage": "https://inspector.contentsweep.ai/",
+  "mode": "local",
+  "tools": 1,
+  "setting": "CONTENTSWEEP_INSPECTOR_MCP_COMMAND",
+  "root_setting": "CONTENTSWEEP_INSPECTOR_ROOT",
+  "command": "prodcheck-mcp",
+  "module": "mcp_products.inspector.mcp",
+  "pricing": "Local CLI and MCP are free. Optional hosted metadata reports have three trials, then $19/100 reports.",
+  "scope": "Static local Python/FastAPI, Docker and GitHub Actions inspection. No target-code execution or source upload. Python 3.12+; reviewed source installation on macOS, qualified 0.3.0 wheel on Linux.",
+  "source": "public",
+  "connection_modes": [
+    "local"
+  ],
+  "required_settings": [
+    "CONTENTSWEEP_INSPECTOR_MCP_COMMAND",
+    "CONTENTSWEEP_INSPECTOR_ROOT"
+  ],
+  "example_references": [
+    "examples/inspector/defective",
+    "examples/inspector/corrected"
+  ],
+  "artifact": {
+    "version": "0.3.0",
+    "python": ">=3.12",
+    "manifest_url": "https://inspector.contentsweep.ai/inspector/download/manifest.json",
+    "immutable_wheel_sha256": "9761f945a9b6d618ea7f16a381036992803522c038501b303a2cbe334da36b71",
+    "macos_install": "reviewed public source; immutable Linux wheel preserved"
+  }
+}
