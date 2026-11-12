@@ -1,0 +1,17 @@
+{
+  "name": "contentsweep-inspector",
+  "owner": {
+    "name": "Content Sweep LLC",
+    "email": "founder@contentsweep.ai"
+  },
+  "metadata": {
+    "description": "Run local Python/FastAPI release checks and prepare a private before/after handoff."
+  },
+  "plugins": [
+    {
+      "name": "contentsweep-inspector",
+      "source": "./",
+      "description": "Run local Python/FastAPI release checks and prepare a private before/after handoff."
+    }
+  ]
+}
