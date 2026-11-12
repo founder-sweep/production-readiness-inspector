@@ -33,5 +33,15 @@
     "manifest_url": "https://inspector.contentsweep.ai/inspector/download/manifest.json",
     "immutable_wheel_sha256": "9761f945a9b6d618ea7f16a381036992803522c038501b303a2cbe334da36b71",
     "macos_install": "reviewed public source; immutable Linux wheel preserved"
+  },
+  "owned_skill_files": {
+    "TOOLS.json": "2f4e972186b8b7ea58e483f37cae82b3c5b9b192a36f03a613773597f08ae941",
+    "agent.css": "9d19b21c1d1894c8bc2d5a8b9e9b7fa4f0c7f159466a1c4709e5e7d4dd44788e",
+    "claude.mcp.json": "198de4d65ef988c2a612ce5b103d8cf802d061e2e03f12ad565069d082067e0d",
+    "codex.toml": "49ba3a198a2aa3cf6118f8036263bc4a18b5d16b0b411c1fbc45d0e90b76f9e2",
+    "AGENT_SETUP.md": "4bb47821737901b5c1981fa9757918a58c56c61ed6225344ed41259143244d28",
+    "TOOL_REFERENCE.md": "f82e26573ce0aa57e8c9fe7ebd56bda4d280607ab51580bc43f97266653d5ff5",
+    "SKILL.md": "bb8452ff006ddeadd83af145885e12d50d7c7a6f29c9c6ba5622a110376cad69",
+    "LICENSE": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
   }
 }
