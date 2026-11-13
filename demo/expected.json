@@ -1,0 +1,452 @@
+{
+  "evidence_kind": "Recorded deterministic MCP execution of owned synthetic fixtures; not a customer outcome",
+  "execution": "deterministic MCP client; not a native agent transcript",
+  "fixtures_sha256": {
+    "corrected/.github/workflows/ci.yml": "20c144b4fc20dd68ae97aa90f382ba83f633f5b2eda912c7d1d88948faead9cc",
+    "corrected/Dockerfile": "3ce7a09089aef7aab85d3a02a0c41ba18a3534b5c097eddd8d49e3a4752b0c90",
+    "corrected/app.py": "f08e1f829f5000784870e9cf267b737edec60e10aa4617da41df47937a057cad",
+    "defective/.github/workflows/ci.yml": "2b6783085b4dc922f585106f39644575df45612d61d3dce13c02f4dbfe96d328",
+    "defective/Dockerfile": "e26d37cfbf1c38c3db68c33680fe840b9a6856ba8ee1a65f04106597e2b50184",
+    "defective/app.py": "87887dfd80e3b21f97047663fa358270d754fa0adcd2a50a8e4eeac2cabd0f4e"
+  },
+  "internal_noncash_qualification": true,
+  "mode": "local",
+  "original_result_sha256": "bef88f1b8dd343c6a525b491ac77aa16a1322ab3449e0c2dc7d406d6049b1f2c",
+  "product": "inspector",
+  "recorded_at": "2026-11-13T16:12:44.820911+00:00",
+  "result": {
+    "after": {
+      "coverage": {
+        "compose": "not_supported",
+        "dependencies": "not_supported",
+        "docker": "analyzed_subset",
+        "fastapi": "syntax_only",
+        "github_actions": "analyzed_subset",
+        "kubernetes": "not_supported",
+        "python": "analyzed",
+        "repository": "analyzed",
+        "runtime_behavior": "not_analyzed",
+        "secret_values": "not_analyzed"
+      },
+      "findings": [
+        
+      ],
+      "generated_at": "2026-11-13T15:05:15.631799Z",
+      "input_fingerprint": "sha256:a35225c99489e4381b67b06822245c901913feaacf789e15bf31c011c32653ea",
+      "metadata": {
+        "baseline": {
+          "new_instances": [
+            
+          ],
+          "resolution_evaluated": true,
+          "resolved_instances": [
+            "sha256:03954b90bdddecc5ee3ca57112f053ff0a8ba501f8470055f0ba5ce9c026e7cb",
+            "sha256:2454f39895ecc09f88990df3ffd231ea04c7fea8961feb261a91ca6c0c9d0573",
+            "sha256:304385688a6043c3f648958f7c8ebdb9a52e88f7fe3a1e467dac9802ae06a77e",
+            "sha256:4a228458dbbc8b2fb2babcebdb61f1ac6075fa298eefc8b1bef5f0cd6f009a54",
+            "sha256:6a5b469e54b36b4b8bd824dacc37f7715a9bca24f89f2d4b78ba02b6488519eb",
+            "sha256:7ac11005aa9514a82a574e0dee42b7c53772633abd68193ddb57331f52f44de9",
+            "sha256:a87da1e1b39f6f7d206c2977a92b527661278dcfd8f014e11d48a9d3eedef1e0",
+            "sha256:bc14701a2eb132640c5a29faf80431f16c52791e046b375148cd5427ab8e10e4",
+            "sha256:e12cdf6579bbf5bca2c60a68db2d4066f28794aab4844ac71ad273e6b5e37c5a",
+            "sha256:f26bf85d99c295b40d94b9e186af167a468a58b1e1725028e8a2b91b3c07ae0a"
+          ],
+          "unchanged_instances": [
+            
+          ]
+        },
+        "baseline_format": "inspector-instances-v1",
+        "bytes_read": 927,
+        "complete": true,
+        "entries_visited": 5,
+        "file_states": [
+          {
+            "family": "github_actions",
+            "path": ".github/workflows/ci.yml",
+            "state": "analyzed"
+          },
+          {
+            "family": "docker",
+            "path": "Dockerfile",
+            "state": "analyzed"
+          },
+          {
+            "family": "python",
+            "path": "app.py",
+            "state": "analyzed"
+          }
+        ],
+        "files_analyzed": 3,
+        "files_considered": 3,
+        "issues": [
+          
+        ],
+        "notes": [
+          
+        ],
+        "profile": "python-fastapi-container-v1",
+        "rule_states": {
+          "PR-CI-001": "evaluated",
+          "PR-CI-002": "evaluated",
+          "PR-DOCKER-001": "evaluated",
+          "PR-DOCKER-002": "evaluated",
+          "PR-DOCKER-003": "evaluated",
+          "PR-DOCKER-004": "evaluated",
+          "PR-FASTAPI-001": "evaluated",
+          "PR-FASTAPI-002": "evaluated",
+          "PR-PY-001": "evaluated",
+          "PR-SECRET-001": "not_applicable"
+        },
+        "ruleset_version": "2026.10.18.1",
+        "scope_fingerprint": "sha256:ad13b6b0b95e5489e52e6444264f9d26d087059b10169917838f1fd5a0bbf330",
+        "skipped_counts": {
+          
+        },
+        "verdict_meaning": "Findings and coverage for shipped static rules only; ready is not a production certification."
+      },
+      "product": "production-readiness-inspector",
+      "schema_version": "1.0",
+      "verdict": "ready"
+    },
+    "before": {
+      "coverage": {
+        "compose": "not_supported",
+        "dependencies": "not_supported",
+        "docker": "analyzed_subset",
+        "fastapi": "syntax_only",
+        "github_actions": "analyzed_subset",
+        "kubernetes": "not_supported",
+        "python": "analyzed",
+        "repository": "analyzed",
+        "runtime_behavior": "not_analyzed",
+        "secret_values": "not_analyzed"
+      },
+      "findings": [
+        {
+          "confidence": 1,
+          "evidence": [
+            {
+              "excerpt": null,
+              "fact": "Literal write-all at workflow/job permission scope.",
+              "locator": ".github/workflows/ci.yml:3",
+              "source": "repository"
+            }
+          ],
+          "id": "PR-CI-002",
+          "metadata": {
+            "confidence_meaning": "deterministic evidence extraction; not a probability of production failure",
+            "evidence_kind": "syntax",
+            "instance_id": "sha256:e12cdf6579bbf5bca2c60a68db2d4066f28794aab4844ac71ad273e6b5e37c5a",
+            "line": 3,
+            "path": ".github/workflows/ci.yml",
+            "rule_version": "2"
+          },
+          "origin": "deterministic",
+          "remediation": "Declare the minimum required workflow/job permissions.",
+          "severity": "high",
+          "status": "open",
+          "title": "Workflow declares write-all token permissions"
+        },
+        {
+          "confidence": 1,
+          "evidence": [
+            {
+              "excerpt": null,
+              "fact": "Remote uses declaration lacks a full immutable reference.",
+              "locator": ".github/workflows/ci.yml:8",
+              "source": "repository"
+            }
+          ],
+          "id": "PR-CI-001",
+          "metadata": {
+            "confidence_meaning": "deterministic evidence extraction; not a probability of production failure",
+            "evidence_kind": "syntax",
+            "instance_id": "sha256:6a5b469e54b36b4b8bd824dacc37f7715a9bca24f89f2d4b78ba02b6488519eb",
+            "line": 8,
+            "path": ".github/workflows/ci.yml",
+            "rule_version": "2"
+          },
+          "origin": "deterministic",
+          "remediation": "Pin remote actions and reusable workflows to a full commit SHA; pin docker actions to a digest.",
+          "severity": "high",
+          "status": "open",
+          "title": "External action is not pinned to an immutable reference"
+        },
+        {
+          "confidence": 1,
+          "evidence": [
+            {
+              "excerpt": null,
+              "fact": "Remote uses declaration lacks a full immutable reference.",
+              "locator": ".github/workflows/ci.yml:11",
+              "source": "repository"
+            }
+          ],
+          "id": "PR-CI-001",
+          "metadata": {
+            "confidence_meaning": "deterministic evidence extraction; not a probability of production failure",
+            "evidence_kind": "syntax",
+            "instance_id": "sha256:f26bf85d99c295b40d94b9e186af167a468a58b1e1725028e8a2b91b3c07ae0a",
+            "line": 11,
+            "path": ".github/workflows/ci.yml",
+            "rule_version": "2"
+          },
+          "origin": "deterministic",
+          "remediation": "Pin remote actions and reusable workflows to a full commit SHA; pin docker actions to a digest.",
+          "severity": "high",
+          "status": "open",
+          "title": "External action is not pinned to an immutable reference"
+        },
+        {
+          "confidence": 1,
+          "evidence": [
+            {
+              "excerpt": null,
+              "fact": "An external FROM image lacks a valid sha256 digest.",
+              "locator": "Dockerfile:1",
+              "source": "repository"
+            }
+          ],
+          "id": "PR-DOCKER-001",
+          "metadata": {
+            "confidence_meaning": "deterministic evidence extraction; not a probability of production failure",
+            "evidence_kind": "syntax",
+            "instance_id": "sha256:bc14701a2eb132640c5a29faf80431f16c52791e046b375148cd5427ab8e10e4",
+            "line": 1,
+            "path": "Dockerfile",
+            "rule_version": "2"
+          },
+          "origin": "deterministic",
+          "remediation": "Consider a reviewed sha256 digest and an explicit update process; tags can change.",
+          "severity": "medium",
+          "status": "open",
+          "title": "External base image is mutable"
+        },
+        {
+          "confidence": 1,
+          "evidence": [
+            {
+              "excerpt": null,
+              "fact": "The final stage's effective explicit USER selects root/UID 0; inherited image defaults are not inspected.",
+              "locator": "Dockerfile:2",
+              "source": "repository"
+            }
+          ],
+          "id": "PR-DOCKER-002",
+          "metadata": {
+            "confidence_meaning": "deterministic evidence extraction; not a probability of production failure",
+            "evidence_kind": "syntax",
+            "instance_id": "sha256:2454f39895ecc09f88990df3ffd231ea04c7fea8961feb261a91ca6c0c9d0573",
+            "line": 2,
+            "path": "Dockerfile",
+            "rule_version": "2"
+          },
+          "origin": "deterministic",
+          "remediation": "Select a non-root runtime user where the application permits it.",
+          "severity": "medium",
+          "status": "open",
+          "title": "Final stage explicitly selects a root runtime user"
+        },
+        {
+          "confidence": 1,
+          "evidence": [
+            {
+              "excerpt": null,
+              "fact": "Effective final ENTRYPOINT/CMD uses shell form without a leading exec. Signal behavior requires review.",
+              "locator": "Dockerfile:4",
+              "source": "repository"
+            }
+          ],
+          "id": "PR-DOCKER-003",
+          "metadata": {
+            "confidence_meaning": "deterministic evidence extraction; not a probability of production failure",
+            "evidence_kind": "syntax",
+            "instance_id": "sha256:03954b90bdddecc5ee3ca57112f053ff0a8ba501f8470055f0ba5ce9c026e7cb",
+            "line": 4,
+            "path": "Dockerfile",
+            "rule_version": "1"
+          },
+          "origin": "deterministic",
+          "remediation": "Review signal forwarding; use JSON exec form or a signal-forwarding entrypoint.",
+          "severity": "medium",
+          "status": "open",
+          "title": "Final startup uses shell form without exec"
+        },
+        {
+          "confidence": 1,
+          "evidence": [
+            {
+              "excerpt": null,
+              "fact": "Final startup arguments invoke uvicorn with --reload.",
+              "locator": "Dockerfile:4",
+              "source": "repository"
+            }
+          ],
+          "id": "PR-DOCKER-004",
+          "metadata": {
+            "confidence_meaning": "deterministic evidence extraction; not a probability of production failure",
+            "evidence_kind": "syntax",
+            "instance_id": "sha256:4a228458dbbc8b2fb2babcebdb61f1ac6075fa298eefc8b1bef5f0cd6f009a54",
+            "line": 4,
+            "path": "Dockerfile",
+            "rule_version": "1"
+          },
+          "origin": "deterministic",
+          "remediation": "Remove --reload from the production startup command.",
+          "severity": "high",
+          "status": "open",
+          "title": "Final startup enables Uvicorn reload"
+        },
+        {
+          "confidence": 1,
+          "evidence": [
+            {
+              "excerpt": null,
+              "fact": "Recognized FastAPI call has literal debug=True.",
+              "locator": "app.py:5",
+              "source": "repository"
+            }
+          ],
+          "id": "PR-PY-001",
+          "metadata": {
+            "confidence_meaning": "deterministic evidence extraction; not a probability of production failure",
+            "evidence_kind": "syntax",
+            "instance_id": "sha256:7ac11005aa9514a82a574e0dee42b7c53772633abd68193ddb57331f52f44de9",
+            "line": 5,
+            "path": "app.py",
+            "rule_version": "2"
+          },
+          "origin": "deterministic",
+          "remediation": "Disable literal debug/reload settings in the production configuration.",
+          "severity": "high",
+          "status": "open",
+          "title": "Development mode is explicitly enabled"
+        },
+        {
+          "confidence": 1,
+          "evidence": [
+            {
+              "excerpt": null,
+              "fact": "Recognized uvicorn.run call has literal reload=True.",
+              "locator": "app.py:14",
+              "source": "repository"
+            }
+          ],
+          "id": "PR-PY-001",
+          "metadata": {
+            "confidence_meaning": "deterministic evidence extraction; not a probability of production failure",
+            "evidence_kind": "syntax",
+            "instance_id": "sha256:304385688a6043c3f648958f7c8ebdb9a52e88f7fe3a1e467dac9802ae06a77e",
+            "line": 14,
+            "path": "app.py",
+            "rule_version": "2"
+          },
+          "origin": "deterministic",
+          "remediation": "Disable literal debug/reload settings in the production configuration.",
+          "severity": "high",
+          "status": "open",
+          "title": "Development mode is explicitly enabled"
+        },
+        {
+          "confidence": 1,
+          "evidence": [
+            {
+              "excerpt": null,
+              "fact": "No directly declared conventional GET health route was found for this constructor in this module. Included routers, custom paths and runtime behavior are not resolved.",
+              "locator": "app.py:5",
+              "source": "repository"
+            }
+          ],
+          "id": "PR-FASTAPI-001",
+          "metadata": {
+            "confidence_meaning": "deterministic evidence extraction; not a probability of production failure",
+            "evidence_kind": "inference",
+            "instance_id": "sha256:a87da1e1b39f6f7d206c2977a92b527661278dcfd8f014e11d48a9d3eedef1e0",
+            "line": 5,
+            "path": "app.py",
+            "rule_version": "2"
+          },
+          "origin": "deterministic",
+          "remediation": "Review /health, /healthz, /ready or /readyz routing and test readiness behavior in the deployed application.",
+          "severity": "medium",
+          "status": "open",
+          "title": "No direct conventional GET health route was found"
+        }
+      ],
+      "generated_at": "2026-11-13T15:05:15.590194Z",
+      "input_fingerprint": "sha256:be3ace0673d5fed1c0c267e62431e7bb1984ce4c6704f2b551b865e6139277b6",
+      "metadata": {
+        "baseline_format": "inspector-instances-v1",
+        "bytes_read": 631,
+        "complete": true,
+        "entries_visited": 5,
+        "file_states": [
+          {
+            "family": "github_actions",
+            "path": ".github/workflows/ci.yml",
+            "state": "analyzed"
+          },
+          {
+            "family": "docker",
+            "path": "Dockerfile",
+            "state": "analyzed"
+          },
+          {
+            "family": "python",
+            "path": "app.py",
+            "state": "analyzed"
+          }
+        ],
+        "files_analyzed": 3,
+        "files_considered": 3,
+        "issues": [
+          
+        ],
+        "notes": [
+          
+        ],
+        "profile": "python-fastapi-container-v1",
+        "rule_states": {
+          "PR-CI-001": "evaluated",
+          "PR-CI-002": "evaluated",
+          "PR-DOCKER-001": "evaluated",
+          "PR-DOCKER-002": "evaluated",
+          "PR-DOCKER-003": "evaluated",
+          "PR-DOCKER-004": "evaluated",
+          "PR-FASTAPI-001": "inferred",
+          "PR-FASTAPI-002": "evaluated",
+          "PR-PY-001": "evaluated",
+          "PR-SECRET-001": "not_applicable"
+        },
+        "ruleset_version": "2026.10.18.1",
+        "scope_fingerprint": "sha256:ad13b6b0b95e5489e52e6444264f9d26d087059b10169917838f1fd5a0bbf330",
+        "skipped_counts": {
+          
+        },
+        "verdict_meaning": "Findings and coverage for shipped static rules only; ready is not a production certification."
+      },
+      "product": "production-readiness-inspector",
+      "schema_version": "1.0",
+      "verdict": "needs_review"
+    },
+    "findings_after": 0,
+    "findings_before": 10,
+    "resolved": 10,
+    "root_escape_refused": true,
+    "source_uploaded": false,
+    "target_code_executed": false
+  },
+  "server": {
+    "description": null,
+    "icons": null,
+    "name": "Production Readiness Inspector",
+    "title": null,
+    "version": "0.3.0",
+    "website_url": null
+  },
+  "status": "passed",
+  "synthetic": true,
+  "tools": [
+    "inspect_repository"
+  ]
+}

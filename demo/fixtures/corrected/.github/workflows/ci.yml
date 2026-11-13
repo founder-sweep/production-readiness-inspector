@@ -1,0 +1,15 @@
+name: fixture
+on: [push]
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      # Synthetic commit for parsing tests; do not execute this workflow.
+      - uses: actions/checkout@aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+      - run: |
+          echo "uses: actions/checkout@main"
+          echo "permissions: write-all"
+        env:
+          EXAMPLE: true

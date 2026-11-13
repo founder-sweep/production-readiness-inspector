@@ -1,0 +1,26 @@
+{
+  "product": "inspector",
+  "status": "passed",
+  "reason": null,
+  "client": "Gemini CLI",
+  "client_version": "0.68.0",
+  "models_observed": [
+    "gemini-3.5-flash-lite"
+  ],
+  "assertions": [
+    "ten findings to zero",
+    "ten resolved baseline instances",
+    "root escape refused",
+    "local MCP and no target execution"
+  ],
+  "synthetic": true,
+  "internal_noncash": true,
+  "customer_outcome": false,
+  "native_mcp_tool_counts": {
+    "inspect_repository": 4
+  },
+  "logs_sha256": {
+    "gemini-inspector-native.jsonl": "b0d7dc8601b15e4ea9880c55a54a175c8d60113b7771d25b322a9a196e84a9e1"
+  },
+  "transport_note": "Native MCP workflow; exact fixture transfer may use a reviewed native shell helper. Deterministic byte checks are recorded separately."
+}

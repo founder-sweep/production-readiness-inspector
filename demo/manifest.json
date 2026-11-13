@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "product": "inspector",
+  "title": "Show ten resolved findings in a FastAPI release handoff",
+  "task": "Inspect the owned defective and corrected fixtures locally, compare their reports and refuse a path outside the chosen root.",
+  "synthetic": true,
+  "slug": "release-handoff",
+  "url": "https://inspector.contentsweep.ai/inspector/demos/release-handoff",
+  "default_mode": "local",
+  "modes": [
+    "local"
+  ],
+  "units": 0,
+  "setting": "CONTENTSWEEP_INSPECTOR_MCP_COMMAND",
+  "endpoint": null,
+  "runtime_artifact": {
+    "version": "0.3.0",
+    "python": ">=3.12",
+    "manifest_url": "https://inspector.contentsweep.ai/inspector/download/manifest.json",
+    "immutable_wheel_sha256": "9761f945a9b6d618ea7f16a381036992803522c038501b303a2cbe334da36b71",
+    "macos_install": "reviewed public source; immutable Linux wheel preserved"
+  },
+  "skill": "inspect-release",
+  "repository": "https://github.com/founder-sweep/production-readiness-inspector",
+  "pricing": "Local CLI and MCP are free. Optional hosted metadata reports have three trials, then $19/100 reports.",
+  "scope": "Static local Python/FastAPI, Docker and GitHub Actions inspection. No target-code execution or source upload. Python 3.12+; reviewed source installation on macOS, qualified 0.3.0 wheel on Linux.",
+  "cases": [
+    "defective",
+    "corrected",
+    "root-escape"
+  ],
+  "campaign": "agent-skill",
+  "fixtures_sha256": {
+    "corrected/.github/workflows/ci.yml": "20c144b4fc20dd68ae97aa90f382ba83f633f5b2eda912c7d1d88948faead9cc",
+    "corrected/Dockerfile": "3ce7a09089aef7aab85d3a02a0c41ba18a3534b5c097eddd8d49e3a4752b0c90",
+    "corrected/app.py": "f08e1f829f5000784870e9cf267b737edec60e10aa4617da41df47937a057cad",
+    "defective/.github/workflows/ci.yml": "2b6783085b4dc922f585106f39644575df45612d61d3dce13c02f4dbfe96d328",
+    "defective/Dockerfile": "e26d37cfbf1c38c3db68c33680fe840b9a6856ba8ee1a65f04106597e2b50184",
+    "defective/app.py": "87887dfd80e3b21f97047663fa358270d754fa0adcd2a50a8e4eeac2cabd0f4e"
+  },
+  "recorded_result": "passed deterministic MCP execution",
+  "agent_run": "passed",
+  "runner_sha256": "2376130d1534c3a3122eac183c1e01ec9da050de9ac6045b9d4c790bde572aae",
+  "expected_sha256": "e201a260e9679b7091546e44fd753a29cd440e1be01f58d6255c1f63ff467d0a",
+  "recorded_at": "2026-11-13T16:12:44.820911+00:00",
+  "dependencies": {
+    "python": ">=3.12",
+    "mcp": ">=2.3,<3"
+  },
+  "source_provenance": {
+    "product_base_commit": "261d302bc012c26cbacbfca5d71ec80714fa4c92",
+    "distribution_base_commit": "0d51cdc09ee71335b6cfe11a791771250194e130",
+    "generator_sha256": "0b393f8d142a558d511da51de447e61711a77796cbfc37542bb191a43c2afae4"
+  },
+  "supplemental_sha256": {
+    "handoff.html": "0490fd71ce0add8c32ea38c91aa2684d29dfb62ca8393590eb576c16c91b64b7"
+  }
+}

@@ -43,5 +43,47 @@
     "TOOL_REFERENCE.md": "d28a50c8c613ef219d0123ad26a37f6883c31061aecc4a09697224596723614c",
     "SKILL.md": "bb8452ff006ddeadd83af145885e12d50d7c7a6f29c9c6ba5622a110376cad69",
     "LICENSE": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+  },
+  "demo": {
+    "url": "https://inspector.contentsweep.ai/inspector/demos/release-handoff",
+    "slug": "release-handoff",
+    "title": "Show ten resolved findings in a FastAPI release handoff",
+    "cases": [
+      "defective",
+      "corrected",
+      "root-escape"
+    ],
+    "default_mode": "local",
+    "package_path": "demo",
+    "max_units": 0,
+    "campaign": "agent-skill",
+    "artifact_hashes": {
+      "corrected/.github/workflows/ci.yml": "20c144b4fc20dd68ae97aa90f382ba83f633f5b2eda912c7d1d88948faead9cc",
+      "corrected/Dockerfile": "3ce7a09089aef7aab85d3a02a0c41ba18a3534b5c097eddd8d49e3a4752b0c90",
+      "corrected/app.py": "f08e1f829f5000784870e9cf267b737edec60e10aa4617da41df47937a057cad",
+      "defective/.github/workflows/ci.yml": "2b6783085b4dc922f585106f39644575df45612d61d3dce13c02f4dbfe96d328",
+      "defective/Dockerfile": "e26d37cfbf1c38c3db68c33680fe840b9a6856ba8ee1a65f04106597e2b50184",
+      "defective/app.py": "87887dfd80e3b21f97047663fa358270d754fa0adcd2a50a8e4eeac2cabd0f4e"
+    },
+    "archive_sha256": "cfc18f97cf5f925a771a15a426105ed52302bb0a8938603441d9738c9b6b6220",
+    "recorded_result_sha256": "bef88f1b8dd343c6a525b491ac77aa16a1322ab3449e0c2dc7d406d6049b1f2c",
+    "agent_status": "passed",
+    "fixtures_path": "demo/fixtures",
+    "source_base_commit": "0d51cdc09ee71335b6cfe11a791771250194e130",
+    "files": {
+      "AGENT_PROMPT.md": "50fc159c2681701ceb0a30ac92c1e59eab4cd68dfd830153a18d90313136fb7f",
+      "README.md": "e43d4b73483794ad0640ec1f7d1634d8ecfc57ebc6a0d7086b514f877d0cb568",
+      "agent-evidence.json": "b4ee97c3eb158b7d3f24004999ab1b15556e0ff0ebe3fb377c0fcf1461f8f819",
+      "expected.json": "e201a260e9679b7091546e44fd753a29cd440e1be01f58d6255c1f63ff467d0a",
+      "fixtures/corrected/.github/workflows/ci.yml": "20c144b4fc20dd68ae97aa90f382ba83f633f5b2eda912c7d1d88948faead9cc",
+      "fixtures/corrected/Dockerfile": "3ce7a09089aef7aab85d3a02a0c41ba18a3534b5c097eddd8d49e3a4752b0c90",
+      "fixtures/corrected/app.py": "f08e1f829f5000784870e9cf267b737edec60e10aa4617da41df47937a057cad",
+      "fixtures/defective/.github/workflows/ci.yml": "2b6783085b4dc922f585106f39644575df45612d61d3dce13c02f4dbfe96d328",
+      "fixtures/defective/Dockerfile": "e26d37cfbf1c38c3db68c33680fe840b9a6856ba8ee1a65f04106597e2b50184",
+      "fixtures/defective/app.py": "87887dfd80e3b21f97047663fa358270d754fa0adcd2a50a8e4eeac2cabd0f4e",
+      "manifest.json": "57d6015bd6fdeb1d63704efc6031c95a28c994e51ceba07c366d88a5470a54e1",
+      "recorded/handoff.html": "0490fd71ce0add8c32ea38c91aa2684d29dfb62ca8393590eb576c16c91b64b7",
+      "run.py": "2376130d1534c3a3122eac183c1e01ec9da050de9ac6045b9d4c790bde572aae"
+    }
   }
 }

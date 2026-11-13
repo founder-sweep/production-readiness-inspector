@@ -1,0 +1,11 @@
+name: fixture
+on: [push]
+permissions: write-all
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: echo "fixture only"
+  reusable:
+    uses: example/workflows/.github/workflows/release.yml@main
