@@ -1,7 +1,7 @@
 {
   "name": "contentsweep-inspector",
   "version": "1.0.0",
-  "description": "Run local Python/FastAPI release checks and prepare a private before/after handoff.",
+  "description": "Proven local Python/FastAPI release inspection and before/after handoffs. Repeatable demo resolves ten findings without source upload or execution.",
   "author": {
     "name": "Content Sweep LLC",
     "email": "founder@contentsweep.ai"

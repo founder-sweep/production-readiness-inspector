@@ -5,7 +5,7 @@
   "plugin": "contentsweep-inspector",
   "skill": "inspect-release",
   "skill_path": "skills/contentsweep-inspector/SKILL.md",
-  "description": "Run local Python/FastAPI release checks and prepare a private before/after handoff.",
+  "description": "Proven local Python/FastAPI release inspection and before/after handoffs. Repeatable demo resolves ten findings without source upload or execution.",
   "homepage": "https://inspector.contentsweep.ai/",
   "mode": "local",
   "tools": 1,
@@ -85,5 +85,20 @@
       "recorded/handoff.html": "0490fd71ce0add8c32ea38c91aa2684d29dfb62ca8393590eb576c16c91b64b7",
       "run.py": "2376130d1534c3a3122eac183c1e01ec9da050de9ac6045b9d4c790bde572aae"
     }
+  },
+  "marketing": {
+    "product": "production-readiness-inspector",
+    "title": "Inspector",
+    "description": "Proven local Python/FastAPI release inspection and before/after handoffs. Repeatable demo resolves ten findings without source upload or execution.",
+    "capability": "Fully capable of supported static Python/FastAPI, Docker and GitHub Actions release checks with a local before/after handoff.",
+    "proof": "The owned FastAPI fixtures go from ten findings to zero, with all ten resolved in the baseline comparison. Source stays local, target code is never executed, and paths outside the authorized root are refused.",
+    "scope": "Static local Python/FastAPI, Docker and GitHub Actions inspection. No target-code execution or source upload. Python 3.12+; reviewed source installation on macOS, qualified 0.3.0 wheel on Linux.",
+    "homepage": "https://inspector.contentsweep.ai/",
+    "demo_url": "https://inspector.contentsweep.ai/inspector/demos/release-handoff",
+    "recorded_result_url": "https://inspector.contentsweep.ai/inspector/demos/release-handoff/expected.json",
+    "agent_evidence_url": "https://inspector.contentsweep.ai/inspector/demos/release-handoff/agent-evidence.json",
+    "demo_archive_sha256": "a5986ec77158577bb0cf759c4297c815409cf8e581ea9476f832d283fe090a34",
+    "verification": "passed repeatable synthetic MCP workflows",
+    "native_gemini_capture": "passed"
   }
 }

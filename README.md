@@ -1,5 +1,16 @@
 # Production Readiness Inspector
 
+<!-- contentsweep-proven-capability:begin -->
+**Fully capable of supported static Python/FastAPI, Docker and GitHub Actions release checks with a local before/after handoff.**
+
+Proven local Python/FastAPI release inspection and before/after handoffs. Repeatable demo resolves ten findings without source upload or execution.
+
+The owned FastAPI fixtures go from ten findings to zero, with all ten resolved in the baseline comparison. Source stays local, target code is never executed, and paths outside the authorized root are refused.
+
+[Inspect the result and repeat the demo](https://inspector.contentsweep.ai/inspector/demos/release-handoff) · [Runnable package](demo/README.md) · [Capability and verification details](CAPABILITIES.md)
+<!-- contentsweep-proven-capability:end -->
+
+
 <!-- agent-current-status:start -->
 ## Current status — November 1, 2026
 
@@ -129,7 +140,7 @@ The marketplace contains Supplier Feeds, Data Quality Gate, Inspector, Schema Ma
 <!-- contentsweep-client-distribution:begin -->
 ## Gemini, Kilo, Cline and Cursor
 
-Run local Python/FastAPI release checks and prepare a private before/after handoff.
+Proven local Python/FastAPI release inspection and before/after handoffs. Repeatable demo resolves ten findings without source upload or execution.
 
 Follow [client installation and recovery](CLIENTS.md). Native configuration examples, required settings, the existing skill and supported scope are included. Catalog submission and acceptance are recorded separately.
 <!-- contentsweep-client-distribution:end -->

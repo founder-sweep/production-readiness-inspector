@@ -5,13 +5,13 @@
     "email": "founder@contentsweep.ai"
   },
   "metadata": {
-    "description": "Run local Python/FastAPI release checks and prepare a private before/after handoff."
+    "description": "Proven local Python/FastAPI release inspection and before/after handoffs. Repeatable demo resolves ten findings without source upload or execution."
   },
   "plugins": [
     {
       "name": "contentsweep-inspector",
       "source": "./",
-      "description": "Run local Python/FastAPI release checks and prepare a private before/after handoff."
+      "description": "Proven local Python/FastAPI release inspection and before/after handoffs. Repeatable demo resolves ten findings without source upload or execution."
     }
   ]
 }
