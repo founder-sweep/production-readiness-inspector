@@ -65,11 +65,11 @@
       "defective/Dockerfile": "e26d37cfbf1c38c3db68c33680fe840b9a6856ba8ee1a65f04106597e2b50184",
       "defective/app.py": "87887dfd80e3b21f97047663fa358270d754fa0adcd2a50a8e4eeac2cabd0f4e"
     },
-    "archive_sha256": "cfc18f97cf5f925a771a15a426105ed52302bb0a8938603441d9738c9b6b6220",
+    "archive_sha256": "a5986ec77158577bb0cf759c4297c815409cf8e581ea9476f832d283fe090a34",
     "recorded_result_sha256": "bef88f1b8dd343c6a525b491ac77aa16a1322ab3449e0c2dc7d406d6049b1f2c",
     "agent_status": "passed",
     "fixtures_path": "demo/fixtures",
-    "source_base_commit": "0d51cdc09ee71335b6cfe11a791771250194e130",
+    "source_base_commit": "dbfb5f929c42df40975a4355226fc02401c50bd5",
     "files": {
       "AGENT_PROMPT.md": "50fc159c2681701ceb0a30ac92c1e59eab4cd68dfd830153a18d90313136fb7f",
       "README.md": "e43d4b73483794ad0640ec1f7d1634d8ecfc57ebc6a0d7086b514f877d0cb568",
@@ -81,7 +81,7 @@
       "fixtures/defective/.github/workflows/ci.yml": "2b6783085b4dc922f585106f39644575df45612d61d3dce13c02f4dbfe96d328",
       "fixtures/defective/Dockerfile": "e26d37cfbf1c38c3db68c33680fe840b9a6856ba8ee1a65f04106597e2b50184",
       "fixtures/defective/app.py": "87887dfd80e3b21f97047663fa358270d754fa0adcd2a50a8e4eeac2cabd0f4e",
-      "manifest.json": "57d6015bd6fdeb1d63704efc6031c95a28c994e51ceba07c366d88a5470a54e1",
+      "manifest.json": "550244402110786f5f23a5a86895633a841faf770d28f34862460a3360679aac",
       "recorded/handoff.html": "0490fd71ce0add8c32ea38c91aa2684d29dfb62ca8393590eb576c16c91b64b7",
       "run.py": "2376130d1534c3a3122eac183c1e01ec9da050de9ac6045b9d4c790bde572aae"
     }
